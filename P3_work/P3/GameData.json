@@ -1,0 +1,27 @@
+{
+    "global_settings": {
+
+        "screen": {
+            "screen_width": 1920,
+            "screen_height": 1080
+        },
+
+        "player_img": "assets/LawnMowerFam.png",
+        "default_texture": "assets/defaultTile.png",
+        "barrier_texture": "assets/barrierTile.png",
+        "short_grass_texture": "assets/shortGrass_new_small.png",
+        "long_grass_texture": "assets/longGrass_new_small.png",
+
+        "states": {
+          "walk": true,
+          "drive": false,
+          "fly": false,
+          "swim": false
+        },
+
+        "player": {
+          "playerX": 150,
+          "playerY": 150
+        }
+    }
+}
