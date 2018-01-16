@@ -121,17 +121,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FSM.cpp" />
     <ClCompile Include="GameLoader.cpp" />
+    <ClCompile Include="Host.cpp" />
+    <ClCompile Include="Idle.cpp" />
     <ClCompile Include="JSON.cpp" />
     <ClCompile Include="JSONValue.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Driving.h" />
+    <ClInclude Include="Flying.h" />
+    <ClInclude Include="FSM.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="GameLoader.h" />
+    <ClInclude Include="Host.h" />
+    <ClInclude Include="Idle.h" />
     <ClInclude Include="JSON.h" />
     <ClInclude Include="JSONValue.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Swimming.h" />
+    <ClInclude Include="Walking.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameData.json" />

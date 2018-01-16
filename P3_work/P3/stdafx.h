@@ -10,6 +10,8 @@
 #include <tchar.h>
 #include <memory>
 #include <fstream>
+#include <thread>
+#include <chrono>
 
 
 // TODO: reference additional headers your program requires here
