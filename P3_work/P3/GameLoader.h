@@ -13,8 +13,11 @@
 #include "stdafx.h"
 using namespace std;
 
-class GameLoader
+namespace FSMLIB
 {
+
+	class GameLoader
+	{
 	public:
 		////////////////////////////////////////////////////////////
 		/// Default constructor
@@ -41,7 +44,8 @@ class GameLoader
 		JSON m_json;
 		JSONValue * m_value;
 		std::string m_JSONData;
-		
-};
 
+	};
+
+}
 #endif;

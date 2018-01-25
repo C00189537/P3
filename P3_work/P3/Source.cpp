@@ -5,6 +5,7 @@
 #include "Gameloader.h"
 #include "StateHandler.h"
 
+using namespace FSMLIB;
 
 int main(int argc, char* argv[]) {
 

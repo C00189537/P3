@@ -8,16 +8,21 @@
 #include <thread>
 #include <chrono>
 
-class Idle : public State
+namespace FSMLIB
 {
-public:
-	Idle() { std::cout << "Idle" << std::endl; };
-	~Idle() {  };
 
-	void idle(FSM* a);
-	void walking(FSM* a);
-	void driving(FSM* a);
-	void flying(FSM* a);
-	void swimming(FSM* a);
-};
+	class Idle : public State
+	{
+	public:
+		Idle() { std::cout << "Idle" << std::endl; };
+		~Idle() {  };
+
+		void idle(FSM* a);
+		void walking(FSM* a);
+		void driving(FSM* a);
+		void flying(FSM* a);
+		void swimming(FSM* a);
+	};
+
+}
 #endif // !

@@ -4,22 +4,27 @@
 
 #pragma once
 #include "SDL.h"
-class Host
+
+namespace FSMLIB
 {
-public:
-	Host();
-	~Host();
 
-	SDL_Point getPos();
-	SDL_Point getVelocity();
+	class Host
+	{
+	public:
+		Host();
+		~Host();
 
-	void setPos(SDL_Point p);
-	void setVelocity(SDL_Point v);
+		SDL_Point getPos();
+		SDL_Point getVelocity();
+
+		void setPos(SDL_Point p);
+		void setVelocity(SDL_Point v);
 
 
-private:
+	private:
 
-	SDL_Point m_pos;
-	SDL_Point m_vel;
-};
+		SDL_Point m_pos;
+		SDL_Point m_vel;
+	};
+}
 

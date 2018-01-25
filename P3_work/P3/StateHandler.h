@@ -2,21 +2,24 @@
 
 #include "FSM.h"
 
-
-class StateHandler
+namespace FSMLIB
 {
-public:
-	StateHandler();
-	StateHandler(std::shared_ptr<GameData> &data);
-	~StateHandler();
 
-	void handleState(SDL_Event &e);
-	SDL_Point getPos(int screenX);
+	class StateHandler
+	{
+	public:
+		StateHandler();
+		StateHandler(std::shared_ptr<GameData> &data);
+		~StateHandler();
 
-private:
-	FSM fsm;
+		void handleState(SDL_Event &e);
+		SDL_Point getPos(int screenX);
+
+	private:
+		FSM fsm;
 
 
 
-};
+	};
+}
 

@@ -1,30 +1,34 @@
 #pragma once
 #include "Idle.h"
 
-class Swimming : public State
+namespace FSMLIB
 {
 
-public:
-	Swimming() {};
-	~Swimming() {};
+	class Swimming : public State
+	{
 
-	void idle(FSM* a)
-	{
-		std::cout << "Going from Swimming to Idling" << std::endl;
-		a->setCurrent(new Idle());
-		delete this;
-	}
-	void swimming(FSM* a)
-	{
-		SDL_Point vel = { a->getHostPos().x + a->m_data->swimSpeed,  a->getHostPos().y + a->m_data->swimSpeed };
-		if (a->getHostPos().y >= a->m_data->seaLevel)
+	public:
+		Swimming() {};
+		~Swimming() {};
+
+		void idle(FSM* a)
 		{
-			SDL_Point temp = { a->getHostPos().x + a->m_data->swimSpeed, a->m_data->seaLevel };
-			a->setHostPos(temp);
+			std::cout << "Going from Swimming to Idling" << std::endl;
+			a->setCurrent(new Idle());
+			delete this;
 		}
-		else
+		void swimming(FSM* a)
 		{
-			a->setHostPos(vel);
+			SDL_Point vel = { a->getHostPos().x + a->m_data->swimSpeed,  a->getHostPos().y + a->m_data->swimSpeed };
+			if (a->getHostPos().y >= a->m_data->seaLevel)
+			{
+				SDL_Point temp = { a->getHostPos().x + a->m_data->swimSpeed, a->m_data->seaLevel };
+				a->setHostPos(temp);
+			}
+			else
+			{
+				a->setHostPos(vel);
+			}
 		}
-	}
-};
+	};
+}

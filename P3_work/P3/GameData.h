@@ -10,44 +10,49 @@
 ////////////////////////////////////////////////////////////
 #include <string>
 #include "SDL.h"
-class GameData 
+
+namespace FSMLIB
 {
 
-public:
-	
-	////////////////////////////////////////////////////////////
-	/// Contains all the variables that will store values from 
-	//  the GameData file. 
-	///
-	////////////////////////////////////////////////////////////
+	class GameData
+	{
 
-	//Sprite
-	std::string playerImg;
+	public:
 
-	//Player
-	int playerX;
-	int playerY;
-	int width;
-	int heigth;
+		////////////////////////////////////////////////////////////
+		/// Contains all the variables that will store values from 
+		//  the GameData file. 
+		///
+		////////////////////////////////////////////////////////////
 
-	//States
-	bool walk;
-	bool drive;
-	bool fly;
-	bool swim;
+		//Sprite
+		std::string playerImg;
 
-	//Player Speeds
-	int walkSpeed;
-	int driveSpeed;
-	int airSpeedX;
-	int airSpeedY;
-	int swimSpeed;
+		//Player
+		int playerX;
+		int playerY;
+		int width;
+		int heigth;
 
-	//Reset levels
-	int groundLevel = 300;
-	int seaLevel = 420;
-	int skyLevel = 100;
-	
+		//States
+		bool walk;
+		bool drive;
+		bool fly;
+		bool swim;
 
-};
+		//Player Speeds
+		int walkSpeed;
+		int driveSpeed;
+		int airSpeedX;
+		int airSpeedY;
+		int swimSpeed;
+
+		//Reset levels
+		int groundLevel = 300;
+		int seaLevel = 420;
+		int skyLevel = 100;
+
+
+	};
+}
 #endif;

@@ -3,10 +3,13 @@
 #include "Host.h"
 #include "stdafx.h"
 
-class FSM
+namespace FSMLIB
 {
-	class State* current;
-public:
+
+	class FSM
+	{
+		class State* current;
+	public:
 		FSM();
 		~FSM();
 
@@ -24,7 +27,8 @@ public:
 		void boundaries(int screenX);
 		std::shared_ptr<GameData> m_data;
 
-private:
-		
+	private:
+
 		Host m_host;
-};
+	};
+}
