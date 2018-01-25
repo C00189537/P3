@@ -27,6 +27,8 @@ public:
 	//Player
 	int playerX;
 	int playerY;
+	int width;
+	int heigth;
 
 	//States
 	bool walk;
@@ -34,7 +36,17 @@ public:
 	bool fly;
 	bool swim;
 
+	//Player Speeds
+	int walkSpeed;
+	int driveSpeed;
+	int airSpeedX;
+	int airSpeedY;
+	int swimSpeed;
 
+	//Reset levels
+	int groundLevel = 300;
+	int seaLevel = 420;
+	int skyLevel = 100;
 	
 
 };

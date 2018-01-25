@@ -14,14 +14,20 @@
 
         "states": {
           "walk": true,
-          "drive": false,
-          "fly": false,
-          "swim": false
+          "drive": true,
+          "fly": true,
+          "swim": true
         },
-
         "player": {
-          "playerX": 150,
-          "playerY": 150
+          "playerX": 300,
+          "playerY": 234,
+          "walkSpeed": 2,
+          "driveSpeed": 4,
+          "airSpeedX": 5,
+          "airSpeedY": 3,
+          "swimSpeed": 3,
+          "width": 64,
+          "heigth": 64
         }
     }
 }

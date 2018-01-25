@@ -1,7 +1,8 @@
 #pragma once
 #include "GameData.h"
 #include "Host.h"
-#include <memory>
+#include "stdafx.h"
+
 class FSM
 {
 	class State* current;
@@ -20,6 +21,7 @@ public:
 		SDL_Point getHostPos();
 		SDL_Point getHostVel();
 		void setHostPos(SDL_Point p);
+		void boundaries(int screenX);
 		std::shared_ptr<GameData> m_data;
 
 private:

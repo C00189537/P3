@@ -53,7 +53,8 @@ void StateHandler::handleState(SDL_Event &e) {
 	}
 }
 
-SDL_Point StateHandler::getPos()
+SDL_Point StateHandler::getPos(int screenX)
 {
+	fsm.boundaries(screenX);
 	return fsm.getHostPos();
 }

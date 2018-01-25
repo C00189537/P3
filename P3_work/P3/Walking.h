@@ -14,4 +14,9 @@ public:
 		a->setCurrent(new Idle());
 		delete this;
 	}
+	void walking(FSM* a)
+	{
+		SDL_Point vel = { a->getHostPos().x + a->m_data->walkSpeed,  a->getHostPos().y };
+		a->setHostPos(vel);
+	}
 };

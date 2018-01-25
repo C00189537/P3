@@ -13,6 +13,8 @@ class Idle : public State
 public:
 	Idle() { std::cout << "Idle" << std::endl; };
 	~Idle() {  };
+
+	void idle(FSM* a);
 	void walking(FSM* a);
 	void driving(FSM* a);
 	void flying(FSM* a);

@@ -4,14 +4,17 @@
 
 FSM::FSM()
 {
-	current = new Idle();
+	
 }
 FSM::~FSM()
 {
 }
 void FSM::initialise(std::shared_ptr<GameData> &data)
 {
+	current = new Idle();
 	m_data = data;
+	SDL_Point pos = {m_data->playerX, m_data->playerY};
+	m_host.setPos(pos);
 }
 //Sets the state of the 
 void FSM::setCurrent(State* s)
@@ -26,21 +29,20 @@ void FSM::idle()
 
 void FSM::walking()
 {
-	current->walk(this);
+	current->walking(this);
 }
 
 void FSM::driving()
 {
-	current->drive(this);
-
+	current->driving(this);
 }
 void FSM::flying()
 {
-	current->fly(this);
+	current->flying(this);
 }
 void FSM::swimming()
 {
-	current->swim(this);
+	current->swimming(this);
 }
 SDL_Point FSM::getHostPos()
 {
@@ -53,4 +55,12 @@ SDL_Point FSM::getHostVel()
 void FSM::setHostPos(SDL_Point p)
 {
 	m_host.setPos(p);
+}
+void FSM::boundaries(int screenX)
+{
+	if (m_host.getPos().x > screenX + m_data->width)
+	{
+		SDL_Point temp = { 0, m_host.getPos().y };
+		m_host.setPos(temp);
+	}
 }

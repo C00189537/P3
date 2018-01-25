@@ -14,4 +14,9 @@ public:
 		a->setCurrent(new Idle());
 		delete this;
 	}
+	void driving(FSM* a)
+	{
+		SDL_Point vel = { a->getHostPos().x + a->m_data->driveSpeed,  a->getHostPos().y };
+		a->setHostPos(vel);
+	}
 };

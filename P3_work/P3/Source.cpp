@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 	SDL_Event e;
 
 	// creates SDL window
-	SDL_Window * window = SDL_CreateWindow("Finite State Machine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, 0);
+	SDL_Window * window = SDL_CreateWindow("Finite State Machine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 480, 0);
 
 	// sets renderer for window
 	SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, 0);
@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 		SDL_PollEvent(&e);
 
 		sHandle.handleState(e);
-		SDL_Point temp = sHandle.getPos();
+		SDL_Point temp = sHandle.getPos(800);
 		rect.x = temp.x;
 		rect.y = temp.y;
 

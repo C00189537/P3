@@ -16,12 +16,27 @@ void GameLoader::parseJSONData(shared_ptr<GameData> &data)
 	JSONObject tempPlayer = globalSettings[L"player"]->AsObject();
 	data->playerX = tempPlayer[L"playerX"]->AsNumber();
 	data->playerY = tempPlayer[L"playerY"]->AsNumber();
+	data->width = tempPlayer[L"width"]->AsNumber();
+	data->heigth = tempPlayer[L"heigth"]->AsNumber();
+	data->walkSpeed = tempPlayer[L"walkSpeed"]->AsNumber();
+	data->driveSpeed = tempPlayer[L"driveSpeed"]->AsNumber();
+	data->airSpeedX = tempPlayer[L"airSpeedX"]->AsNumber();
+	data->airSpeedY = tempPlayer[L"airSpeedY"]->AsNumber();
+	data->swimSpeed = tempPlayer[L"swimSpeed"]->AsNumber();
 
 	JSONObject tempStates = globalSettings[L"states"]->AsObject();
 	data->walk = tempStates[L"walk"]->AsBool();
 	data->drive = tempStates[L"drive"]->AsBool();
 	data->fly = tempStates[L"fly"]->AsBool();
 	data->swim = tempStates[L"swim"]->AsBool();
+
+	/*JSONObject tempPos = globalSettings[L"yPositions"]->AsObject();
+	data->groundLevel = tempPos[L"ground"]->AsNumber();
+	data->skyLevel = tempPos[L"sky"]->AsNumber();
+	data->seaLevel = tempPos[L"sea"]->AsNumber();*/
+
+	
+
 
 }
 void GameLoader::loadJSONData(std::string const & filename)

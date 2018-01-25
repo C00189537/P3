@@ -1,33 +1,32 @@
 #ifndef STATE_H_
 #define STATE_H_
-#include "stdafx.h"
 #include "FSM.h"
 class State
 {
 public:
+
 	virtual void idle(FSM* a)
 	{
-		std::cout << "State::Idling" << std::endl;
+		//std::cout << "State::Idling" << std::endl;
 	}
 
-	virtual void walk(FSM* a)
+	virtual void walking(FSM* a)
 	{
-		std::cout << "State::Walk" << std::endl;
-
+		//std::cout << "State::Walk" << std::endl;
 	}
 
-	virtual void drive(FSM* a)
+	virtual void driving(FSM* a)
 	{
-		std::cout << "State::Drive" << std::endl;
+		//std::cout << "State::Drive" << std::endl;
 
 	}
-	virtual void fly(FSM* a)
+	virtual void flying(FSM* a)
 	{
-		std::cout << "State::Fly" << std::endl;
+		//std::cout << "State::Fly" << std::endl;
 	}
-	virtual void swim(FSM* a)
+	virtual void swimming(FSM* a)
 	{
-		std::cout << "State::Swim" << std::endl;
+		//std::cout << "State::Swim" << std::endl;
 	}
 };
 #endif // !STATE_H_
