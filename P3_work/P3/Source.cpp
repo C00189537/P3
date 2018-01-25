@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include <SDL_image.h> 
 #include "Gameloader.h"
+#include "StateHandler.h"
 
 
 int main(int argc, char* argv[]) {
@@ -37,7 +38,7 @@ int main(int argc, char* argv[]) {
 	
 	bool running = true;
 
-	//InputHandler input;
+	StateHandler sHandle(data);
 
 	SDL_Rect rect;
 	rect.x = 300;
@@ -49,7 +50,10 @@ int main(int argc, char* argv[]) {
 		// reads event event
 		SDL_PollEvent(&e);
 
-		//input.handleInput(e, verticalPos);
+		sHandle.handleState(e);
+		SDL_Point temp = sHandle.getPos();
+		rect.x = temp.x;
+		rect.y = temp.y;
 
 		// clears and redraws window
 		SDL_RenderClear(renderer);

@@ -128,6 +128,7 @@
     <ClCompile Include="JSON.cpp" />
     <ClCompile Include="JSONValue.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="StateHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Driving.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="JSON.h" />
     <ClInclude Include="JSONValue.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateHandler.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Swimming.h" />
     <ClInclude Include="Walking.h" />

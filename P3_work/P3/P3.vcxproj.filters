@@ -36,6 +36,9 @@
     <ClCompile Include="Idle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameData.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Swimming.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,6 +13,7 @@ public:
 	virtual void walk(FSM* a)
 	{
 		std::cout << "State::Walk" << std::endl;
+
 	}
 
 	virtual void drive(FSM* a)

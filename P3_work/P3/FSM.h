@@ -1,6 +1,7 @@
 #pragma once
 #include "GameData.h"
 #include "Host.h"
+#include <memory>
 class FSM
 {
 	class State* current;
@@ -8,7 +9,7 @@ public:
 		FSM();
 		~FSM();
 
-		FSM(GameData data);
+		void initialise(std::shared_ptr<GameData> &data);
 		void setCurrent(State* s);
 		void idle();
 		void walking();
@@ -18,8 +19,10 @@ public:
 
 		SDL_Point getHostPos();
 		SDL_Point getHostVel();
+		void setHostPos(SDL_Point p);
+		std::shared_ptr<GameData> m_data;
 
 private:
-		GameData m_data;
+		
 		Host m_host;
 };

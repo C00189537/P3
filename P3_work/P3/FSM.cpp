@@ -9,11 +9,10 @@ FSM::FSM()
 FSM::~FSM()
 {
 }
-FSM::FSM(GameData data) : m_data(data)
+void FSM::initialise(std::shared_ptr<GameData> &data)
 {
-	current = new Idle();
+	m_data = data;
 }
-
 //Sets the state of the 
 void FSM::setCurrent(State* s)
 {
@@ -50,4 +49,8 @@ SDL_Point FSM::getHostPos()
 SDL_Point FSM::getHostVel()
 {
 	return m_host.getVelocity();
+}
+void FSM::setHostPos(SDL_Point p)
+{
+	m_host.setPos(p);
 }
