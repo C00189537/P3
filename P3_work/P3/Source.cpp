@@ -98,7 +98,6 @@ int main(int argc, char* argv[]) {
 		temp = carHandle.getPos(800);
 		rect2.x = temp.x;
 		rect2.y = temp.y;
-
 		planeHandle.handleState(e);
 		temp = planeHandle.getPos(800);
 		rect3.x = temp.x;

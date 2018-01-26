@@ -1,0 +1,33 @@
+{
+    "global_settings": {
+
+        "screen": {
+            "screen_width": 1920,
+            "screen_height": 1080
+        },
+
+        "yPositions": {
+          "ground": 300,
+          "sky": 100,
+          "sea": 420
+        },
+
+        "states": {
+          "walk": true,
+          "drive": false,
+          "fly": false,
+          "swim": false
+        },
+        "player": {
+          "playerX": 300,
+          "playerY": 234,
+          "walkSpeed": 2,
+          "driveSpeed": 4,
+          "airSpeedX": 5,
+          "airSpeedY": 3,
+          "swimSpeed": 3,
+          "width": 64,
+          "heigth": 64
+        }
+    }
+}
