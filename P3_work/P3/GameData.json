@@ -11,12 +11,17 @@
         "barrier_texture": "assets/barrierTile.png",
         "short_grass_texture": "assets/shortGrass_new_small.png",
         "long_grass_texture": "assets/longGrass_new_small.png",
+        "yPositions": {
+          "ground": 300,
+          "sky": 100,
+          "sea": 420
+        },
 
         "states": {
           "walk": true,
-          "drive": true,
-          "fly": true,
-          "swim": true
+          "drive": false,
+          "fly": false,
+          "swim": false
         },
         "player": {
           "playerX": 300,

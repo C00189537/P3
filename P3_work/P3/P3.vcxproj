@@ -89,7 +89,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\SDL2-2.0.7\lib\x64;..\Box2D-master\Box2D\Build\vs2017\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;Box2D.lib;SDL2_ttf.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;Box2D.lib;P3_LIB_D.lib;SDL2_ttf.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -114,21 +114,20 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\Box2D-master\Box2D;..\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\Box2D-master\Box2D\Build\vs2017\bin\Debug;..\SDL2-2.0.7\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2_ttf.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;P3_LIB_R.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FSM.cpp" />
-    <ClCompile Include="GameLoader.cpp" />
-    <ClCompile Include="Host.cpp" />
-    <ClCompile Include="Idle.cpp" />
     <ClCompile Include="JSON.cpp" />
     <ClCompile Include="JSONValue.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="StateHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Driving.h" />
