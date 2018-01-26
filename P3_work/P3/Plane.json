@@ -13,13 +13,13 @@
         },
 
         "states": {
-          "walk": true,
+          "walk": false,
           "drive": false,
-          "fly": false,
+          "fly": true,
           "swim": false
         },
         "player": {
-          "playerX": 300,
+          "playerX": 100,
           "playerY": 234,
           "walkSpeed": 2,
           "driveSpeed": 4,

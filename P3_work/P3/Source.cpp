@@ -7,16 +7,35 @@
 
 using namespace FSMLIB;
 
+
 int main(int argc, char* argv[]) {
 
 	//Load data from the file
 	std::shared_ptr<GameData> data;
+	std::shared_ptr<GameData> carData;
+	std::shared_ptr<GameData> planeData;
+	std::shared_ptr<GameData> submarineData;
 	GameLoader gameLoader;
 
 	data = make_shared<GameData>();
 	std::string filename = ".\\GameData.json";
 	gameLoader.loadJSONData(filename);
 	gameLoader.parseJSONData(data);
+
+	carData = make_shared<GameData>();
+	std::string cfilename = ".\\Car.json";
+	gameLoader.loadJSONData(cfilename);
+	gameLoader.parseJSONData(carData);
+
+	planeData = make_shared<GameData>();
+	std::string pfilename = ".\\Plane.json";
+	gameLoader.loadJSONData(pfilename);
+	gameLoader.parseJSONData(planeData);
+
+	submarineData = make_shared<GameData>();
+	std::string sfilename = ".\\Submarine.json";
+	gameLoader.loadJSONData(sfilename);
+	gameLoader.parseJSONData(submarineData);
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
@@ -32,20 +51,39 @@ int main(int argc, char* argv[]) {
 
 	// loads image
 	SDL_Texture * image = IMG_LoadTexture(renderer, "square.bmp");
-	if (image == nullptr)
-	{
-		std::cout << "image failed to load" << std::endl;
-	}
-	
+	SDL_Texture * cimage = IMG_LoadTexture(renderer, "car.bmp");
+	SDL_Texture * pimage = IMG_LoadTexture(renderer, "plane.bmp");
+	SDL_Texture * simage = IMG_LoadTexture(renderer, "submarine.bmp");
+	SDL_Texture * bimage = IMG_LoadTexture(renderer, "background.bmp");
+
 	bool running = true;
 
 	StateHandler sHandle(data);
+	StateHandler carHandle(carData);
+	StateHandler planeHandle(planeData);
+	StateHandler submarineHandle(submarineData);
 
-	SDL_Rect rect;
-	rect.x = 300;
-	rect.y = 300;
-	rect.w = 32;
-	rect.h = 32;
+	SDL_Rect rect1;
+	rect1.w = 32;
+	rect1.h = 32;
+
+	SDL_Rect rect2;
+	rect2.w = 32;
+	rect2.h = 32;
+
+	SDL_Rect rect3;
+	rect3.w = 32;
+	rect3.h = 32;
+
+	SDL_Rect rect4;
+	rect4.w = 32;
+	rect4.h = 32;
+
+	SDL_Rect rect5;
+	rect5.x = 0;
+	rect5.y = 0;
+	rect5.w = 800;
+	rect5.h = 480;
 
 	while (running) {
 		// reads event event
@@ -53,17 +91,42 @@ int main(int argc, char* argv[]) {
 
 		sHandle.handleState(e);
 		SDL_Point temp = sHandle.getPos(800);
-		rect.x = temp.x;
-		rect.y = temp.y;
+		rect1.x = temp.x;
+		rect1.y = temp.y;
+		
+		carHandle.handleState(e);
+		temp = carHandle.getPos(800);
+		rect2.x = temp.x;
+		rect2.y = temp.y;
+
+		planeHandle.handleState(e);
+		temp = planeHandle.getPos(800);
+		rect3.x = temp.x;
+		rect3.y = temp.y;
+
+		submarineHandle.handleState(e);
+		temp = submarineHandle.getPos(800);
+		rect4.x = temp.x;
+		rect4.y = temp.y;
 
 		// clears and redraws window
 		SDL_RenderClear(renderer);
 
-		SDL_RenderCopy(renderer, image, NULL, &rect);
+		SDL_RenderCopy(renderer, bimage, NULL, &rect5);
+
+		SDL_RenderCopy(renderer, image, NULL, &rect1);
+		SDL_RenderCopy(renderer, cimage, NULL, &rect2);
+		SDL_RenderCopy(renderer, pimage, NULL, &rect3);
+		SDL_RenderCopy(renderer, simage, NULL, &rect4);
+		
 		SDL_RenderPresent(renderer);
 	}
 
 	SDL_DestroyTexture(image);
+	SDL_DestroyTexture(cimage);
+	SDL_DestroyTexture(simage);
+	SDL_DestroyTexture(pimage);
+	SDL_DestroyTexture(bimage);
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 

@@ -73,5 +73,14 @@
     <None Include="GameData.json">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Car.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Plane.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Submarine.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
